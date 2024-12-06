@@ -10,12 +10,17 @@ openai.api_key = user_api_key
 
 # Updated prompt for generating topic-based questions and answers
 prompt = """You are an AI assistant capable of generating a list of questions based on a topic. 
-            You will receive a random topic. Your task is to:
-            1. Generate 10 questions about that topic.
-            2. Generate answers for all questions in a separate list.
-            Return the result in JSON format with two parts:
-            - The first part is a JSON array of questions.
-            - The second part is a JSON array of answers.
+You will receive a random topic. Your task is to:
+1. Generate 10 questions about that topic.
+2. Generate answers for all questions in a separate list.
+3. Extract technical terms (e.g., important keywords, domain-specific terms, or capitalized words) from the questions and answers.
+4. For each technical term, provide a brief description or explanation.
+
+Return the result in JSON format with four parts:
+- The first part is a JSON array of questions.
+- The second part is a JSON array of answers.
+- The third part is a JSON array of technical terms.
+- The fourth part is a JSON array of descriptions for each technical term.
             """
 
 st.title('Topic-Based Question Generator')
