@@ -87,8 +87,7 @@ if st.button('Generate Questions and Answers'):
             else:
                 st.warning("No questions or answers found. Please try again.")
         
-        except openai.error.AuthenticationError:
-            st.error("Invalid API Key. Please check your key and try again.")
+        
         except json.JSONDecodeError as e:
             st.error(f"Error in parsing the JSON response: {e}")
         except KeyError as e:
