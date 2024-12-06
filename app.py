@@ -47,7 +47,7 @@ if st.button('Generate Questions and Answers'):
             ]
             
             # Get the response from OpenAI
-            response = openai.chat_completions.create(
+            response = openai.chat.completions.create(
                 model="gpt-3.5-turbo",
                 messages=messages_so_far
             )
